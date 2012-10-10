@@ -23,29 +23,20 @@
 {
     UITouch* touch = [touches anyObject];
     CGPoint touchLocation = [touch locationInView:self.superview];
-    CGPoint lowerLeftCorner = CGPointMake(0, self.frame.size.height);
-    CGPoint outerLowerLeftCorner = [self convertPoint:lowerLeftCorner toView:self.superview];
-
     
-    NSLog(@"OLLC.x = %f  OLLC.y = %f", outerLowerLeftCorner.x, outerLowerLeftCorner.y);
-    NSLog(@"width = %f", self.superview.frame.size.width);
-    
-    
-    
-    if ((outerLowerLeftCorner.y <= self.superview.frame.size.width) &&
-        (outerLowerLeftCorner.y >= self.frame.size.height/2))
+    if (touchLocation.y < self.frame.size.height/2)
     {
+        self.center = CGPointMake(self.center.x, self.frame.size.height/2);
+    }
+    else if (touchLocation.y > (self.superview.frame.size.width - (self.frame.size.height/2)))
+    {
+        self.center = CGPointMake(self.center.x, (self.superview.frame.size.width - self.frame.size.height/2));
+    }
+    else {
         self.center = CGPointMake(self.center.x, touchLocation.y);
     }
-    
-    lastY = touchLocation.y;
-    
-    /*if ((touchLocation.y + self.frame.size.height/2 <= self.superview.frame.size.width) &&
-        (touchLocation.y - self.frame.size.height/2 >= 0)) {
-        self.center = CGPointMake(self.center.x, touchLocation.y);
-    }
-     */
 }
+
 
 -(void)movePaddleUp
 {
