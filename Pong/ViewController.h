@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @class PaddleView;
+@class BallView;
 
 @interface ViewController : UIViewController
 {
-    IBOutlet PaddleView* paddleViewLeft;
-    IBOutlet PaddleView* paddleViewRight;
+    IBOutlet PaddleView*    paddleViewLeft;
+    IBOutlet PaddleView*    paddleViewRight;
+    IBOutlet BallView*      ballView;
 }
+
+@property(nonatomic, retain)IBOutlet BallView* aBV;
 @end

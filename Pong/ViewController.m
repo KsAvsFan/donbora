@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "PaddleView.h"
-
+#import "BallView.h"
 
 @interface ViewController ()
 
@@ -20,6 +20,7 @@
 {
     [super viewDidLoad];
     [paddleViewRight startMoving];
+    [ballView startAnimation];
 }
 
 - (void)didReceiveMemoryWarning

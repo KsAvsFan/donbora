@@ -40,7 +40,7 @@
 						<string key="NSFrame">{{33, 144}, {22, 80}}</string>
 						<reference key="NSSuperview" ref="909135115"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="66192279"/>
+						<reference key="NSNextKeyView" ref="602889812"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -57,6 +57,22 @@
 						<string key="NSFrame">{{430, 120}, {22, 80}}</string>
 						<reference key="NSSuperview" ref="909135115"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<string key="NSReuseIdentifierKey">_NS:9</string>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MQA</bytes>
+							<reference key="NSCustomColorSpace" ref="621699808"/>
+						</object>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
+					<object class="IBUIView" id="602889812">
+						<reference key="NSNextResponder" ref="909135115"/>
+						<int key="NSvFlags">292</int>
+						<string key="NSFrame">{{210, 145}, {30, 30}}</string>
+						<reference key="NSSuperview" ref="909135115"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="66192279"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -113,6 +129,14 @@
 					</object>
 					<int key="connectionID">25</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">ballView</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="602889812"/>
+					</object>
+					<int key="connectionID">27</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -139,6 +163,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="242596351"/>
 							<reference ref="66192279"/>
+							<reference ref="602889812"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -154,6 +179,11 @@
 						<reference key="parent" ref="909135115"/>
 						<string key="objectName">PaddleView (right)</string>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">26</int>
+						<reference key="object" ref="602889812"/>
+						<reference key="parent" ref="909135115"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -166,15 +196,25 @@
 				<string key="22.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="23.CustomClassName">PaddleView</string>
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="26.CustomClassName">BallView</string>
+				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">25</int>
+			<int key="maxID">27</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">BallView</string>
+					<string key="superclassName">UIView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/BallView.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">PaddleView</string>
 					<string key="superclassName">UIView</string>
@@ -187,10 +227,15 @@
 					<string key="className">ViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="ballView">BallView</string>
 						<string key="paddleViewLeft">PaddleView</string>
 						<string key="paddleViewRight">PaddleView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="ballView">
+							<string key="name">ballView</string>
+							<string key="candidateClassName">BallView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="paddleViewLeft">
 							<string key="name">paddleViewLeft</string>
 							<string key="candidateClassName">PaddleView</string>
