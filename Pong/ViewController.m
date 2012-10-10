@@ -21,6 +21,10 @@
     [super viewDidLoad];
     [paddleViewRight startMoving];
     [ballView startAnimation];
+    
+
+    
+    [self startTimer];
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,6 +36,28 @@
 -(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationLandscapeRight || interfaceOrientation == UIInterfaceOrientationLandscapeLeft );
+}
+
+
+-(void)checkForCollision
+{
+   // NSLog(@"checkForCollision: bv.x = %f bv.y = %f", [[ballView.layer presentationLayer] frame].origin.x,[[ballView.layer presentationLayer] frame].origin.x);
+    //ballView.backgroundColor = [UIColor blueColor];
+    
+    if(CGRectIntersectsRect([[ballView.layer presentationLayer] frame], [[paddleViewLeft.layer presentationLayer] frame]))
+    {
+        NSLog(@"!!! The ball hit the left paddle");
+    }
+    else if(CGRectIntersectsRect([[ballView.layer presentationLayer] frame], [[paddleViewRight.layer presentationLayer] frame]))
+    {
+        NSLog(@"!!! The ball hit the right paddle");
+    }
+}
+
+
+-(void)startTimer
+{
+    [NSTimer scheduledTimerWithTimeInterval:0.1f target:self selector:@selector(checkForCollision) userInfo:nil repeats:YES];
 }
 
 @end

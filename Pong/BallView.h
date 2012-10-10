@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-@interface BallView : UIView
+@interface BallView : UIView 
 {
     CAKeyframeAnimation* positionAnimation;
 }

@@ -24,7 +24,6 @@
 -(void)startAnimation
 {
     [self animatePath];
-    [self startTimer];
 }
 
 
@@ -32,18 +31,26 @@
 {
     CGMutablePathRef path = CGPathCreateMutable();
     
-    CGPathMoveToPoint(path, NULL, self.superview.frame.size.width, self.superview.frame.size.height);
-    CGPathAddLineToPoint(path, NULL, 0,0);
+    CGPathMoveToPoint(path, NULL, self.superview.frame.size.width, self.superview.frame.size.height/2);
+    CGPathAddLineToPoint(path, NULL, 0,self.superview.frame.size.height/2);
     
     positionAnimation.path = path;
     positionAnimation.calculationMode = kCAAnimationPaced;
     positionAnimation.duration = 2.0f;
     positionAnimation.repeatCount =  0;
     positionAnimation.removedOnCompletion = YES;
+    positionAnimation.delegate = self;
     
     [self.layer addAnimation:positionAnimation forKey:@"position"];
    
 }
+
+
+- (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)flag
+{
+   // [self updatePath];
+}
+
 
 -(void)updatePath
 {
@@ -51,7 +58,7 @@
 
     [self.layer removeAnimationForKey:@"position"];
     
-    CGPathMoveToPoint(path, NULL, self.superview.center.x, 0);
+    CGPathMoveToPoint(path, NULL, 0, 0);
     CGPathAddLineToPoint(path, NULL, self.superview.center.x, self.superview.frame.size.height);
     
     positionAnimation.path = path;
@@ -60,10 +67,7 @@
 }
 
 
--(void)startTimer
-{
-    [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(updatePath) userInfo:nil repeats:YES];
-}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
