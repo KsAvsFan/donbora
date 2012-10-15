@@ -22,8 +22,12 @@
     [super viewDidLoad];
     [paddleViewRight startMoving];
     
-    ballView.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    ballView.center = self.view.center;
     directionX = directionY = 1;
+    mPlayerOneScore = mPlayerTwoScore = 0;
+    
+    oPlayerOneScore.text = [NSString stringWithFormat:@"%i", mPlayerOneScore];
+    oPlayerTwoScore.text = [NSString stringWithFormat:@"%i", mPlayerTwoScore];
     
     [self startTimer];
 }
@@ -40,26 +44,52 @@
 }
 
 
--(void)moveBall
+-(void)resetBall:(NSTimer*)timer
 {
+    [timer invalidate];
+    ballView.center = self.view.center;
+    directionY *= -1;
+    directionX *= -1;
+    [self startTimer];
+}
 
+-(void)moveBall:(NSTimer*)timer
+{
     if ((ballView.frame.origin.y + ballView.frame.size.width > self.view.frame.size.width) ||
-        (ballView.frame.origin.y < 0)) {
+        (ballView.frame.origin.y < 0))
+    {
         directionY *= -1;
     }
     
-    if ((ballView.frame.origin.x + ballView.frame.size.height > self.view.frame.size.height) ||
-        (ballView.frame.origin.x < 0)) {
-        directionX *= -1;
+    
+    if (ballView.frame.origin.x + ballView.frame.size.height > self.view.frame.size.height){
+        [self resetBall:timer];
+        mPlayerOneScore++;
+        oPlayerOneScore.text = [NSString stringWithFormat:@"%i", mPlayerOneScore];
+    }
+    else if(ballView.frame.origin.x < 0){
+        [self resetBall:timer];
+        mPlayerTwoScore++;
+        oPlayerTwoScore.text = [NSString stringWithFormat:@"%i", mPlayerTwoScore];
     }
     
+    if (CGRectIntersectsRect(ballView.frame, paddleViewLeft.frame)) {
+        directionX *= -1;
+        directionY *= -1;
+    }
+    else if (CGRectIntersectsRect(ballView.frame, paddleViewRight.frame)) {
+        directionX *= -1;
+        directionY *= -1;
+    }
+    
+    
     ballView.center = CGPointMake(ballView.center.x + directionX, ballView.center.y + directionY);    
- }
+}
 
 
 -(void)startTimer
 {
-    [NSTimer scheduledTimerWithTimeInterval:0.001f target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:0.005f target:self selector:@selector(moveBall:) userInfo:nil repeats:YES];
 }
 
 @end

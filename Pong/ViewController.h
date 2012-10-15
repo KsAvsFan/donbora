@@ -9,17 +9,22 @@
 #import <UIKit/UIKit.h>
 
 @class PaddleView;
-@class BallView;
 
 @interface ViewController : UIViewController
 {
     IBOutlet PaddleView*    paddleViewLeft;
     IBOutlet PaddleView*    paddleViewRight;
+    IBOutlet UILabel*       oPlayerOneScore;
+    IBOutlet UILabel*       oPlayerTwoScore;
     IBOutlet UIView*        ballView;
     
     int                     directionY;
     int                     directionX;
+    int                     mPlayerOneScore;
+    int                     mPlayerTwoScore;
 }
 
-@property(nonatomic, retain)IBOutlet BallView* aBV;
+
+-(void)moveBall:(NSTimer*)timer;
+
 @end
