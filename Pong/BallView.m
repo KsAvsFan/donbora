@@ -81,12 +81,19 @@
         xSourceDirection = Right;
         ySourceDirection = Bottom;
     }
-    else if((xSourceDirection == Right && ySourceDirection == Bottom) && (collisionPoint.x <= 0
-                                                                          )){
+    else if((xSourceDirection == Right && ySourceDirection == Bottom) && (collisionPoint.x <= 0)){
         CGPathMoveToPoint(path, NULL, collisionPoint.x, collisionPoint.y);
-        CGPathAddLineToPoint(path, NULL, 0 - screenBuffer, collisionPoint.y);
+        CGPathAddLineToPoint(path, NULL, collisionPoint.y, 0 - screenBuffer);
         NSLog(@"Animating to x=%f y=%f", collisionPoint.y, 0.0f - screenBuffer);
         xSourceDirection = Left;
+        ySourceDirection = Bottom;
+    }
+    
+    else if((xSourceDirection == Right && ySourceDirection == Top) && (collisionPoint.y >= containingViewHeight - (self.frame.size.width/2))){
+        CGPathMoveToPoint(path, NULL, collisionPoint.x, collisionPoint.y);
+        CGPathAddLineToPoint(path, NULL, collisionPoint.y, 0 - screenBuffer);
+        NSLog(@"Animating to x=%f y=%f", collisionPoint.y, 0.0f - screenBuffer);
+        xSourceDirection = Right;
         ySourceDirection = Bottom;
     }
     
