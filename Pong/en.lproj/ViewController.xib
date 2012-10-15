@@ -57,7 +57,6 @@
 						<string key="NSFrame">{{430, 120}, {22, 80}}</string>
 						<reference key="NSSuperview" ref="909135115"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -92,10 +91,6 @@
 					<bytes key="NSRGB">MC41MjU5Njg1OTA2IDAuNTI1OTY4NTkwNiAwLjUyNTk2ODU5MDYAA</bytes>
 				</object>
 				<int key="IBUIContentMode">4</int>
-				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
-					<int key="IBUIInterfaceOrientation">3</int>
-					<int key="interfaceOrientation">3</int>
-				</object>
 				<object class="IBUISimulatedSizeMetrics" key="IBUISimulatedDestinationMetrics">
 					<string key="IBUISimulatedSizeMetricsClass">IBUISimulatedFreeformSizeMetricsSentinel</string>
 					<string key="IBUIDisplayName">Freeform</string>
@@ -227,11 +222,16 @@
 					<string key="className">ViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="aBV">BallView</string>
 						<string key="ballView">BallView</string>
 						<string key="paddleViewLeft">PaddleView</string>
 						<string key="paddleViewRight">PaddleView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="aBV">
+							<string key="name">aBV</string>
+							<string key="candidateClassName">BallView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="ballView">
 							<string key="name">ballView</string>
 							<string key="candidateClassName">BallView</string>

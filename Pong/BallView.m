@@ -16,6 +16,10 @@
     if (self) {
         positionAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
         [positionAnimation retain];
+        
+        xSourceDirection = Left;
+        ySourceDirection = Bottom;
+        
     }
     return self;
 }
@@ -23,6 +27,8 @@
 
 -(void)startAnimation
 {
+    containingViewHeight = self.superview.frame.size.height;
+    containingViewWidth = self.superview.frame.size.width;
     [self animatePath];
 }
 
@@ -31,19 +37,44 @@
 {
     CGMutablePathRef path = CGPathCreateMutable();
     
-    CGPathMoveToPoint(path, NULL, self.superview.frame.size.width, self.superview.frame.size.height/2);
-    CGPathAddLineToPoint(path, NULL, 0,self.superview.frame.size.height/2);
+    CGPathMoveToPoint(path, NULL, containingViewWidth/2, containingViewHeight/2);
+    CGPathAddLineToPoint(path, NULL, (containingViewWidth/4) * 3, -10);
     
     positionAnimation.path = path;
     positionAnimation.calculationMode = kCAAnimationPaced;
-    positionAnimation.duration = 2.0f;
+    positionAnimation.duration = 1.0f;
     positionAnimation.repeatCount =  0;
     positionAnimation.removedOnCompletion = YES;
     positionAnimation.delegate = self;
     
     [self.layer addAnimation:positionAnimation forKey:@"position"];
-   
 }
+
+
+
+-(void)changeDirection:(CGPoint) collisionPoint
+{
+    CGMutablePathRef path = CGPathCreateMutable();
+
+    [self.layer removeAnimationForKey:@"position"];
+
+    if (xSourceDirection == Left && collisionPoint.y <= self.frame.size.height/2) {
+        
+        CGPathMoveToPoint(path, NULL, collisionPoint.x, collisionPoint.y);
+        CGPathAddLineToPoint(path, NULL, containingViewWidth, containingViewWidth - collisionPoint.x);
+        // send the ball left and
+    }
+
+    positionAnimation.path = path;
+    positionAnimation.calculationMode = kCAAnimationPaced;
+    positionAnimation.duration = 1.0f;
+    positionAnimation.repeatCount =  0;
+    positionAnimation.removedOnCompletion = YES;
+    positionAnimation.delegate = self;
+    
+    [self.layer addAnimation:positionAnimation forKey:@"position"];
+}
+
 
 
 - (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)flag

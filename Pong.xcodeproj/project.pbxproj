@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		933092A2162BB7FA00E61C80 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		93858CEC1625BF78004521EA /* BallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallView.h; sourceTree = "<group>"; };
 		93858CED1625BF78004521EA /* BallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallView.m; sourceTree = "<group>"; };
 		93858CF41625C648004521EA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -65,8 +66,8 @@
 		93F1569216231B4A0002BBD6 = {
 			isa = PBXGroup;
 			children = (
-				93858CF41625C648004521EA /* QuartzCore.framework */,
 				93F156A716231B4A0002BBD6 /* Pong */,
+				93F156A816231B4A0002BBD6 /* Supporting Files */,
 				93F156A016231B4A0002BBD6 /* Frameworks */,
 				93F1569E16231B4A0002BBD6 /* Products */,
 			);
@@ -83,6 +84,7 @@
 		93F156A016231B4A0002BBD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93858CF41625C648004521EA /* QuartzCore.framework */,
 				93F156A116231B4A0002BBD6 /* UIKit.framework */,
 				93F156A316231B4A0002BBD6 /* Foundation.framework */,
 				93F156A516231B4A0002BBD6 /* CoreGraphics.framework */,
@@ -100,9 +102,9 @@
 				93F156BC16231B4A0002BBD6 /* ViewController.xib */,
 				93F156C416231C330002BBD6 /* PaddleView.h */,
 				93F156C516231C330002BBD6 /* PaddleView.m */,
-				93F156A816231B4A0002BBD6 /* Supporting Files */,
 				93858CEC1625BF78004521EA /* BallView.h */,
 				93858CED1625BF78004521EA /* BallView.m */,
+				933092A2162BB7FA00E61C80 /* Constants.h */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -119,6 +121,7 @@
 				93F156B716231B4A0002BBD6 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = Pong;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

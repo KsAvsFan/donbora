@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "Constants.h"
+
 
 @interface BallView : UIView 
 {
-    CAKeyframeAnimation* positionAnimation;
+    CAKeyframeAnimation*    positionAnimation;
+    DirectionType           xSourceDirection;
+    DirectionType           ySourceDirection;
+    
+    CGFloat                 containingViewHeight;
+    CGFloat                 containingViewWidth;
 }
 -(void)startAnimation;
-
+-(void)changeDirection:(CGPoint) collisionPoint;
 @end
