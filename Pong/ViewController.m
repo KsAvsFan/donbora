@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "PaddleView.h"
-#import "BallView.h"
 #import "Constants.h"
 
 
@@ -22,9 +21,9 @@
 {
     [super viewDidLoad];
     [paddleViewRight startMoving];
-    [ballView startAnimation];
     
-
+    ballView.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+    directionX = directionY = 1;
     
     [self startTimer];
 }
@@ -41,43 +40,26 @@
 }
 
 
--(void)checkForCollision
+-(void)moveBall
 {
-   // NSLog(@"checkForCollision: bv.x = %f bv.y = %f", [[ballView.layer presentationLayer] frame].origin.x,[[ballView.layer presentationLayer] frame].origin.x);
-    //ballView.backgroundColor = [UIColor blueColor];
+
+    if ((ballView.frame.origin.y + ballView.frame.size.width > self.view.frame.size.width) ||
+        (ballView.frame.origin.y < 0)) {
+        directionY *= -1;
+    }
     
-    NSLog(@"[[ballView.layer presentationLayer] frame].origin.x = %f", [[ballView.layer presentationLayer] frame].origin.x);
-    NSLog(@"[[ballView.layer presentationLayer] frame].origin.y = %f", [[ballView.layer presentationLayer] frame].origin.y);
-    if(CGRectIntersectsRect([[ballView.layer presentationLayer] frame], [[paddleViewLeft.layer presentationLayer] frame]))
-    {
-        NSLog(@"!!! The ball hit the left paddle");
+    if ((ballView.frame.origin.x + ballView.frame.size.height > self.view.frame.size.height) ||
+        (ballView.frame.origin.x < 0)) {
+        directionX *= -1;
     }
-    else if(CGRectIntersectsRect([[ballView.layer presentationLayer] frame], [[paddleViewRight.layer presentationLayer] frame]))
-    {
-        NSLog(@"!!! The ball hit the right paddle");
-    }
-    else if ([[ballView.layer presentationLayer] frame].origin.x >= (self.view.frame.size.height - ballView.frame.size.width/2)){
-        NSLog(@"Frame went off screen, east bound");
-        [ballView changeDirection:[[ballView.layer presentationLayer] frame].origin];
-    }
-    else if ([[ballView.layer presentationLayer] frame].origin.x <= 0){
-        NSLog(@"Frame went off screen, west bound");
-        [ballView changeDirection:[[ballView.layer presentationLayer] frame].origin];
-    }
-    else if ([[ballView.layer presentationLayer] frame].origin.y >= self.view.frame.size.width){
-        NSLog(@"Frame went off screen, south bound");
-        [ballView changeDirection:[[ballView.layer presentationLayer] frame].origin];
-    }
-    else if ([[ballView.layer presentationLayer] frame].origin.y <= ballView.frame.size.height/2){
-        NSLog(@"Frame went off screen, north bound");
-        [ballView changeDirection:[[ballView.layer presentationLayer] frame].origin];
-    }
-}
+    
+    ballView.center = CGPointMake(ballView.center.x + directionX, ballView.center.y + directionY);    
+ }
 
 
 -(void)startTimer
 {
-    [NSTimer scheduledTimerWithTimeInterval:0.2f target:self selector:@selector(checkForCollision) userInfo:nil repeats:YES];
+    [NSTimer scheduledTimerWithTimeInterval:0.001f target:self selector:@selector(moveBall) userInfo:nil repeats:YES];
 }
 
 @end

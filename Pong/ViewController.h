@@ -15,7 +15,10 @@
 {
     IBOutlet PaddleView*    paddleViewLeft;
     IBOutlet PaddleView*    paddleViewRight;
-    IBOutlet BallView*      ballView;
+    IBOutlet UIView*        ballView;
+    
+    int                     directionY;
+    int                     directionX;
 }
 
 @property(nonatomic, retain)IBOutlet BallView* aBV;

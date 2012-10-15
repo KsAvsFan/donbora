@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		93858CEE1625BF78004521EA /* BallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93858CED1625BF78004521EA /* BallView.m */; };
 		93858CF51625C648004521EA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93858CF41625C648004521EA /* QuartzCore.framework */; };
 		93F156A216231B4A0002BBD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F156A116231B4A0002BBD6 /* UIKit.framework */; };
 		93F156A416231B4A0002BBD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F156A316231B4A0002BBD6 /* Foundation.framework */; };
@@ -25,8 +24,6 @@
 
 /* Begin PBXFileReference section */
 		933092A2162BB7FA00E61C80 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		93858CEC1625BF78004521EA /* BallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallView.h; sourceTree = "<group>"; };
-		93858CED1625BF78004521EA /* BallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallView.m; sourceTree = "<group>"; };
 		93858CF41625C648004521EA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93F1569D16231B4A0002BBD6 /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F156A116231B4A0002BBD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -102,8 +99,6 @@
 				93F156BC16231B4A0002BBD6 /* ViewController.xib */,
 				93F156C416231C330002BBD6 /* PaddleView.h */,
 				93F156C516231C330002BBD6 /* PaddleView.m */,
-				93858CEC1625BF78004521EA /* BallView.h */,
-				93858CED1625BF78004521EA /* BallView.m */,
 				933092A2162BB7FA00E61C80 /* Constants.h */,
 			);
 			path = Pong;
@@ -194,7 +189,6 @@
 				93F156B216231B4A0002BBD6 /* AppDelegate.m in Sources */,
 				93F156BB16231B4A0002BBD6 /* ViewController.m in Sources */,
 				93F156C616231C330002BBD6 /* PaddleView.m in Sources */,
-				93858CEE1625BF78004521EA /* BallView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
