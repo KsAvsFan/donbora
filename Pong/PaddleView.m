@@ -64,7 +64,7 @@
 
 -(void)startMoving
 {
-    [self movePaddleUp];
+    //[self movePaddleUp];
 }
 /*
 // Only override drawRect: if you perform custom drawing.

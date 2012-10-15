@@ -56,15 +56,17 @@
     {
         NSLog(@"!!! The ball hit the right paddle");
     }
-    else if ([[ballView.layer presentationLayer] frame].origin.x >= self.view.frame.size.height){
-        NSLog(@"Frame went off screen, west bound");
+    else if ([[ballView.layer presentationLayer] frame].origin.x >= (self.view.frame.size.height - ballView.frame.size.width/2)){
+        NSLog(@"Frame went off screen, east bound");
         [ballView changeDirection:[[ballView.layer presentationLayer] frame].origin];
     }
     else if ([[ballView.layer presentationLayer] frame].origin.x <= 0){
-        NSLog(@"Frame went off screen, east bound");
+        NSLog(@"Frame went off screen, west bound");
+        [ballView changeDirection:[[ballView.layer presentationLayer] frame].origin];
     }
     else if ([[ballView.layer presentationLayer] frame].origin.y >= self.view.frame.size.width){
         NSLog(@"Frame went off screen, south bound");
+        [ballView changeDirection:[[ballView.layer presentationLayer] frame].origin];
     }
     else if ([[ballView.layer presentationLayer] frame].origin.y <= ballView.frame.size.height/2){
         NSLog(@"Frame went off screen, north bound");

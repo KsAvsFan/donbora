@@ -8,6 +8,8 @@
 
 #import "BallView.h"
 
+#define screenBuffer 20
+
 @implementation BallView
 
 - (id)initWithCoder:(NSCoder *)coder
@@ -55,16 +57,39 @@
 -(void)changeDirection:(CGPoint) collisionPoint
 {
     CGMutablePathRef path = CGPathCreateMutable();
-
+    
     [self.layer removeAnimationForKey:@"position"];
-
-    if (xSourceDirection == Left && collisionPoint.y <= self.frame.size.height/2) {
-        
+    
+    if ((xSourceDirection == Left && ySourceDirection == Bottom) && collisionPoint.y <= self.frame.size.height/2) {
         CGPathMoveToPoint(path, NULL, collisionPoint.x, collisionPoint.y);
-        CGPathAddLineToPoint(path, NULL, containingViewWidth, containingViewWidth - collisionPoint.x);
-        // send the ball left and
+        CGPathAddLineToPoint(path, NULL, containingViewWidth + screenBuffer, containingViewWidth - collisionPoint.x);
+        //NSLog(@"Animating to x=%f y=%f", containingViewWidth + screenBuffer, containingViewWidth - collisionPoint.x);
+        ySourceDirection = Top;
+        // send the ball left and down
     }
-
+    else if((xSourceDirection == Left && ySourceDirection == Top) && (collisionPoint.x >= containingViewWidth - (self.frame.size.width/2))){
+        CGPathMoveToPoint(path, NULL, collisionPoint.x, collisionPoint.y);
+        CGPathAddLineToPoint(path, NULL, (containingViewHeight - collisionPoint.y), containingViewHeight + screenBuffer);
+        //NSLog(@"Animating to x=%f y=%f", (containingViewHeight - collisionPoint.y), containingViewHeight + screenBuffer);
+        xSourceDirection = Right;
+        // send the ball right and down
+    }
+    else if((xSourceDirection == Right && ySourceDirection == Top) && (collisionPoint.y >= containingViewHeight - (self.frame.size.width/2))){
+        CGPathMoveToPoint(path, NULL, collisionPoint.x, collisionPoint.y);
+        CGPathAddLineToPoint(path, NULL, 0, collisionPoint.x);
+        //NSLog(@"Animating to x=%f y=%f", 0.0f - screenBuffer, collisionPoint.x);
+        xSourceDirection = Right;
+        ySourceDirection = Bottom;
+    }
+    else if((xSourceDirection == Right && ySourceDirection == Bottom) && (collisionPoint.x <= 0
+                                                                          )){
+        CGPathMoveToPoint(path, NULL, collisionPoint.x, collisionPoint.y);
+        CGPathAddLineToPoint(path, NULL, 0 - screenBuffer, collisionPoint.y);
+        NSLog(@"Animating to x=%f y=%f", collisionPoint.y, 0.0f - screenBuffer);
+        xSourceDirection = Left;
+        ySourceDirection = Bottom;
+    }
+    
     positionAnimation.path = path;
     positionAnimation.calculationMode = kCAAnimationPaced;
     positionAnimation.duration = 1.0f;
