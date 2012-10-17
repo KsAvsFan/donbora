@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93528774162F19530024FDBE /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93528772162F19530024FDBE /* IntroViewController.m */; };
+		93528775162F19530024FDBE /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93528773162F19530024FDBE /* IntroViewController.xib */; };
 		93858CF51625C648004521EA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93858CF41625C648004521EA /* QuartzCore.framework */; };
 		93F156A216231B4A0002BBD6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F156A116231B4A0002BBD6 /* UIKit.framework */; };
 		93F156A416231B4A0002BBD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F156A316231B4A0002BBD6 /* Foundation.framework */; };
@@ -24,6 +26,9 @@
 
 /* Begin PBXFileReference section */
 		933092A2162BB7FA00E61C80 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		93528771162F19530024FDBE /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		93528772162F19530024FDBE /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		93528773162F19530024FDBE /* IntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroViewController.xib; sourceTree = "<group>"; };
 		93858CF41625C648004521EA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		93F1569D16231B4A0002BBD6 /* Pong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F156A116231B4A0002BBD6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -100,6 +105,9 @@
 				93F156C416231C330002BBD6 /* PaddleView.h */,
 				93F156C516231C330002BBD6 /* PaddleView.m */,
 				933092A2162BB7FA00E61C80 /* Constants.h */,
+				93528771162F19530024FDBE /* IntroViewController.h */,
+				93528772162F19530024FDBE /* IntroViewController.m */,
+				93528773162F19530024FDBE /* IntroViewController.xib */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -175,6 +183,7 @@
 				93F156B616231B4A0002BBD6 /* Default@2x.png in Resources */,
 				93F156B816231B4A0002BBD6 /* Default-568h@2x.png in Resources */,
 				93F156BE16231B4A0002BBD6 /* ViewController.xib in Resources */,
+				93528775162F19530024FDBE /* IntroViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +198,7 @@
 				93F156B216231B4A0002BBD6 /* AppDelegate.m in Sources */,
 				93F156BB16231B4A0002BBD6 /* ViewController.m in Sources */,
 				93F156C616231C330002BBD6 /* PaddleView.m in Sources */,
+				93528774162F19530024FDBE /* IntroViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

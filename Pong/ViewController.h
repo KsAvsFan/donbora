@@ -10,7 +10,7 @@
 
 @class PaddleView;
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIAlertViewDelegate>
 {
     IBOutlet PaddleView*    paddleViewLeft;
     IBOutlet PaddleView*    paddleViewRight;

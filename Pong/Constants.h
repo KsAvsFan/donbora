@@ -9,12 +9,7 @@
 #ifndef Pong_Constants_h
 #define Pong_Constants_h
 
-typedef enum  {Left, Right, Bottom, Top} DirectionType;
 
-struct Direction
-{
-    DirectionType xDirection;
-    DirectionType yDirection;
-};
+CGFloat sComputerPaddleSpeed = 0.01f;
 
 #endif

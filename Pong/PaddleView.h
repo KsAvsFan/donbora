@@ -9,12 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PaddleView : UIView
-{
-    CGFloat lastY;
-}
 
--(void)movePaddleUp;
--(void)movePaddleDown;
--(void)startMoving;
+@property(nonatomic, assign)BOOL autoPlay;
 
 @end
