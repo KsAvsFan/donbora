@@ -6,15 +6,15 @@
 //  Copyright (c) 2012 Don Bora. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "GameViewController.h"
 #import "PaddleView.h"
 
 
-@interface ViewController ()
+@interface GameViewController ()
 
 @end
 
-@implementation ViewController
+@implementation GameViewController
 
 - (void)viewDidLoad
 {
@@ -28,7 +28,11 @@
     
     oPlayerOneScore.text = [NSString stringWithFormat:@"%i", mPlayerOneScore];
     oPlayerTwoScore.text = [NSString stringWithFormat:@"%i", mPlayerTwoScore];
-    
+}
+
+
+-(void)startGame
+{
     [self startTimer];
 }
 
@@ -73,13 +77,13 @@
 
 -(void)moveBall:(NSTimer*)timer
 {
-    if ((ballView.frame.origin.y + ballView.frame.size.width > self.view.frame.size.width) ||
+    if ((ballView.frame.origin.y + ballView.frame.size.width > self.view.frame.size.height) ||
         (ballView.frame.origin.y < 0))
     {
         directionY *= -1;
     }
     
-    if (ballView.frame.origin.x + ballView.frame.size.height > self.view.frame.size.height){
+    if (ballView.frame.origin.x + ballView.frame.size.height > self.view.frame.size.width){
         [self resetBall:timer];
         mPlayerOneScore++;
         oPlayerOneScore.text = [NSString stringWithFormat:@"%i", mPlayerOneScore];
@@ -115,7 +119,7 @@
 {
     switch (buttonIndex) {
         case 0:
-            // do nothing
+            [self.view removeFromSuperview];
             break;
             
         case 1:

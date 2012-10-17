@@ -7,7 +7,7 @@
 //
 
 #import "IntroViewController.h"
-#import "ViewController.h"
+#import "GameViewController.h"
 
 
 @interface IntroViewController ()
@@ -39,8 +39,18 @@
 
 -(IBAction)startGame:(id)sender
 {
-    ViewController* viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    viewController.view.alpha = 0.0f;
+    GameViewController* gameViewController = [[GameViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    gameViewController.view.alpha = 0.0f;
+    [self.view addSubview:gameViewController.view];
+    
+    [UIView animateWithDuration:2.0
+                     animations:^{
+                         gameViewController.view.alpha = 1.0f;
+                     }
+                     completion:^(BOOL finished) {
+                         [gameViewController startGame];
+                     }];
+    
 }
 
 @end

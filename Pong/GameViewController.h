@@ -10,7 +10,7 @@
 
 @class PaddleView;
 
-@interface ViewController : UIViewController <UIAlertViewDelegate>
+@interface GameViewController : UIViewController <UIAlertViewDelegate>
 {
     IBOutlet PaddleView*    paddleViewLeft;
     IBOutlet PaddleView*    paddleViewRight;
@@ -26,5 +26,6 @@
 
 
 -(void)moveBall:(NSTimer*)timer;
+-(void)startGame;
 
 @end

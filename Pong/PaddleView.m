@@ -74,7 +74,7 @@
 
 -(void)movePaddleDown:(NSTimer*)timer
 {
-    if ((self.center.y + (self.frame.size.height/2)) >=  self.superview.frame.size.width) {
+    if ((self.center.y + (self.frame.size.height/2)) >=  self.superview.frame.size.height) {
         [timer invalidate];
         [NSTimer scheduledTimerWithTimeInterval:sComputerPaddleSpeed
                                          target:self

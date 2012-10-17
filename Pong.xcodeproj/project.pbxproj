@@ -19,8 +19,8 @@
 		93F156B416231B4A0002BBD6 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F156B316231B4A0002BBD6 /* Default.png */; };
 		93F156B616231B4A0002BBD6 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F156B516231B4A0002BBD6 /* Default@2x.png */; };
 		93F156B816231B4A0002BBD6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93F156B716231B4A0002BBD6 /* Default-568h@2x.png */; };
-		93F156BB16231B4A0002BBD6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F156BA16231B4A0002BBD6 /* ViewController.m */; };
-		93F156BE16231B4A0002BBD6 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F156BC16231B4A0002BBD6 /* ViewController.xib */; };
+		93F156BB16231B4A0002BBD6 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F156BA16231B4A0002BBD6 /* GameViewController.m */; };
+		93F156BE16231B4A0002BBD6 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93F156BC16231B4A0002BBD6 /* GameViewController.xib */; };
 		93F156C616231C330002BBD6 /* PaddleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F156C516231C330002BBD6 /* PaddleView.m */; };
 /* End PBXBuildFile section */
 
@@ -43,9 +43,9 @@
 		93F156B316231B4A0002BBD6 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		93F156B516231B4A0002BBD6 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		93F156B716231B4A0002BBD6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		93F156B916231B4A0002BBD6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		93F156BA16231B4A0002BBD6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		93F156BD16231B4A0002BBD6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		93F156B916231B4A0002BBD6 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		93F156BA16231B4A0002BBD6 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		93F156BD16231B4A0002BBD6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GameViewController.xib; sourceTree = "<group>"; };
 		93F156C416231C330002BBD6 /* PaddleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaddleView.h; sourceTree = "<group>"; };
 		93F156C516231C330002BBD6 /* PaddleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaddleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,9 +99,9 @@
 			children = (
 				93F156B016231B4A0002BBD6 /* AppDelegate.h */,
 				93F156B116231B4A0002BBD6 /* AppDelegate.m */,
-				93F156B916231B4A0002BBD6 /* ViewController.h */,
-				93F156BA16231B4A0002BBD6 /* ViewController.m */,
-				93F156BC16231B4A0002BBD6 /* ViewController.xib */,
+				93F156B916231B4A0002BBD6 /* GameViewController.h */,
+				93F156BA16231B4A0002BBD6 /* GameViewController.m */,
+				93F156BC16231B4A0002BBD6 /* GameViewController.xib */,
 				93F156C416231C330002BBD6 /* PaddleView.h */,
 				93F156C516231C330002BBD6 /* PaddleView.m */,
 				933092A2162BB7FA00E61C80 /* Constants.h */,
@@ -182,7 +182,7 @@
 				93F156B416231B4A0002BBD6 /* Default.png in Resources */,
 				93F156B616231B4A0002BBD6 /* Default@2x.png in Resources */,
 				93F156B816231B4A0002BBD6 /* Default-568h@2x.png in Resources */,
-				93F156BE16231B4A0002BBD6 /* ViewController.xib in Resources */,
+				93F156BE16231B4A0002BBD6 /* GameViewController.xib in Resources */,
 				93528775162F19530024FDBE /* IntroViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +196,7 @@
 			files = (
 				93F156AE16231B4A0002BBD6 /* main.m in Sources */,
 				93F156B216231B4A0002BBD6 /* AppDelegate.m in Sources */,
-				93F156BB16231B4A0002BBD6 /* ViewController.m in Sources */,
+				93F156BB16231B4A0002BBD6 /* GameViewController.m in Sources */,
 				93F156C616231C330002BBD6 /* PaddleView.m in Sources */,
 				93528774162F19530024FDBE /* IntroViewController.m in Sources */,
 			);
@@ -213,12 +213,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		93F156BC16231B4A0002BBD6 /* ViewController.xib */ = {
+		93F156BC16231B4A0002BBD6 /* GameViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				93F156BD16231B4A0002BBD6 /* en */,
 			);
-			name = ViewController.xib;
+			name = GameViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
